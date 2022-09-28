@@ -1,4 +1,3 @@
-#include "defines.h"
 
 uint32_t constexpr MAX_HUFFMAN_TABLE_ENTRIES = 256;
 
@@ -1552,7 +1551,7 @@ HuffmanTable get_huffman_table(uint32_t tableIdx)
     }
     else
     {
-        CAKEZ_ASSERT(0, "Wrong Table Index: %d", tableIdx);
+        assert(0, "Wrong Table Index: %d", tableIdx);
     }
 
     return ht;

@@ -1,8 +1,5 @@
 #pragma once
 
-#include "sound.h"
-#include "defines.h"
-
 enum TextColor
 {
 	TEXT_COLOR_WHITE,
@@ -28,13 +25,13 @@ struct Request
 
 HTTPConnection platform_connect_to_server(char *serverName, bool https = true);
 
-Request platform_send_http_request(HTTPConnection connection, char *url, 
+Request platform_send_http_request(HTTPConnection connection, char *url,
 																	 char *header, char *method = "POST", char *data = 0,
 																	 bool secure = true);
 
 bool platform_recieve_http_response(Request request);
 
-bool platform_receive_http_data(Request request, char *outBuffer, uint32_t bufferSize, 
+bool platform_receive_http_data(Request request, char *outBuffer, uint32_t bufferSize,
 																uint32_t *outReceivedBytes = 0);
 
 void platform_close_http_request(Request request);

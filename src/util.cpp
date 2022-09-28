@@ -2,8 +2,6 @@
 #define array_count(marr) (sizeof(marr) / sizeof(marr[0]))
 #define DEFAULT_BUFFER_SIZE 128
 
-#include "logger.h"
-#include <string.h>
 
 void to_lower_case(char *msgBegin)
 {
@@ -19,7 +17,7 @@ void to_lower_case(char *msgBegin)
 uint32_t str_length( char *string)
 {
 	uint32_t size = 0;
-	
+
 	if (string)
 	{
 		while (char c = *(string++))
@@ -27,18 +25,18 @@ uint32_t str_length( char *string)
 			size++;
 		}
 	}
-	
+
 	return size;
 }
 
 bool str_in_str(char *hay, char *needle)
 {
-	CAKEZ_ASSERT(hay, "No hay supplied!");
-	CAKEZ_ASSERT(needle, "No needle supplied!");
-	
+	assert(hay, "No hay supplied!");
+	assert(needle, "No needle supplied!");
+
 	bool result = false;
 	uint32_t index = 0;
-	
+
 	while (char c = *(hay++))
 	{
 		if (!needle[index] && index > 0)
@@ -46,7 +44,7 @@ bool str_in_str(char *hay, char *needle)
 			result = true;
 			break;
 		}
-		
+
 		if (needle[index] == c)
 		{
 			index++;
@@ -56,7 +54,7 @@ bool str_in_str(char *hay, char *needle)
 			index = 0;
 		}
 	}
-	
+
 	return result;
 }
 
@@ -76,7 +74,7 @@ bool contains_prefix( char *prefix,  char *text)
 			}
 		}
 	}
-	
+
 	return result;
 }
 

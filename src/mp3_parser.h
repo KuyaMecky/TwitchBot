@@ -332,7 +332,7 @@ bool parse_mp3(char *data, uint32_t lengthInBytes, float *pcmBuffer)
                     }
                     else
                     {
-                        CAKEZ_ASSERT(0, "Reserved Frequency Index");
+                        assert(0, "Reserved Frequency Index");
                     }
                 }
 
@@ -445,7 +445,7 @@ bool parse_mp3(char *data, uint32_t lengthInBytes, float *pcmBuffer)
                     uint32_t blockType = 0;
                     if (windowSwitching)
                     {
-                        CAKEZ_ASSERT(0, "Window Switching Sadge!");
+                        assert(0, "Window Switching Sadge!");
                     }
 
                     uint32_t tableIndices[3] = {};
@@ -473,7 +473,7 @@ bool parse_mp3(char *data, uint32_t lengthInBytes, float *pcmBuffer)
                     uint32_t slen3 = (scaleFacComp % 16) >> 2;
                     uint32_t slen4 = scaleFacComp % 4;
 
-                    /** 
+                    /**
                          * Since block type is 0 (because window switching flag = 0)
                          * we define the number of scale factor bands as follows
                         */
@@ -719,7 +719,7 @@ bool parse_mp3(char *data, uint32_t lengthInBytes, float *pcmBuffer)
                     {
                         if (windowSwitching /*blockType == 2*/)
                         {
-                            CAKEZ_ASSERT(0, "We need to reorder");
+                            assert(0, "We need to reorder");
                         }
                     }
 
@@ -739,7 +739,7 @@ bool parse_mp3(char *data, uint32_t lengthInBytes, float *pcmBuffer)
                         }
                         else
                         {
-                            CAKEZ_ASSERT(0, "Check for mixed Blocks");
+                            assert(0, "Check for mixed Blocks");
                             // if(mixed_block_flag[gr][ch]==’0’)
                             // sb_amount=0;
                             // else

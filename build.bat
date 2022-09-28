@@ -1,4 +1,5 @@
 @echo off
+cls
 
 SetLocal EnableDelayedExpansion
 if not defined DevEnvDir (
@@ -13,4 +14,4 @@ echo "Building main..."
 
 if not exist build\NUL mkdir build
 
-cl /nologo /FC /EHsc /Z7 /std:c++17 /Fe"main" /Fobuild/ %defines% %includeFlags% src/win32_platform.cpp %linkerFlags%
+cl /nologo /FC /EHsc /Z7 /std:c++20 -Zc:strictStrings- /Fe"main" /Fobuild/ %defines% %includeFlags% src/win32_platform.cpp %linkerFlags%

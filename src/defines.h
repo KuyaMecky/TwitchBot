@@ -1,11 +1,8 @@
-//TODO: Maybe use my own defines?
-#include "logger.h"
-#include <cstdint>
+#pragma once
+
 #define BIT(x) (1 << x)
 
-// #define internal static
 #define global_variable static
-#define internal static
 
 #define ArraySize(arr) sizeof((arr)) / sizeof((arr)[0])
 
@@ -19,3 +16,5 @@
 
 // clang-format on
 // clang-format off
+
+#define b8 bool

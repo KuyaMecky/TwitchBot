@@ -1,6 +1,5 @@
 #pragma once
 
-#include "defines.h"
 
 #define _______ "\0\0\0\0"
 static const char uri_encode_tbl[ sizeof(int32_t) * 0x100 ] = {

@@ -1,9 +1,6 @@
 #pragma once
 
-#include <cstdint>
-#include <vector>
-
-enum TokenType
+enum e_token_type
 {
 	TOKEN_TYPE_STRING,
 	TOKEN_TYPE_ARRAY,
@@ -13,7 +10,7 @@ enum TokenType
 
 struct Token
 {
-	TokenType type;
+	e_token_type type;
 	uint32_t start;
 	uint32_t end;
 	uint32_t size;

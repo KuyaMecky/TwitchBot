@@ -6,9 +6,6 @@
     This software is distributed without any warranty.
     See <http://creativecommons.org/publicdomain/zero/1.0/>.
 */
-#include <stddef.h>
-#include "mp3_lib.h"
-
 /* flags for mp3dec_ex_open_* functions */
 #define MP3D_SEEK_TO_BYTE   0      /* mp3dec_ex_seek seeks to byte in stream */
 #define MP3D_SEEK_TO_SAMPLE 1      /* mp3dec_ex_seek precisely seeks to sample using index (created during duration calculation scan or when mp3dec_ex_seek called) */
@@ -131,8 +128,6 @@ int mp3dec_ex_open_w(mp3dec_ex_t *dec,  wchar_t *file_name, int flags);
 
 #if defined(MINIMP3_IMPLEMENTATION) && !defined(_MINIMP3_EX_IMPLEMENTATION_GUARD)
 #define _MINIMP3_EX_IMPLEMENTATION_GUARD
-#include <limits.h>
-#include "minimp3.h"
 
 static void mp3dec_skip_id3v1( uint8_t *buf, size_t *pbuf_size)
 {

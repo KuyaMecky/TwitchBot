@@ -1,8 +1,5 @@
 #pragma once
 
-#include "defines.h"
-#include "logger.h"
-#include "memory.h"
 
 enum SoundBufferType
 {
@@ -24,7 +21,7 @@ struct Sound
 };
 
 void play_sound(Sound sound, bool loop = false, float volume = 1.0f);
-void play_sound(char* mp3File, uint32_t fileSize, 
+void play_sound(char* mp3File, uint32_t fileSize,
 								bool loop = false, float volume = 1.0f);
 
 // Util

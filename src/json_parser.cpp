@@ -1,5 +1,3 @@
-#include "json_parser.h"
-#include "logger.h"
 
 static void parse_string(const char *buffer, const uint32_t length, uint32_t &pos, Token &t)
 {
@@ -105,7 +103,7 @@ bool parse_json(const char *buffer, const uint32_t length, std::vector<Token> &t
 
     if (parentStack.size() != 0)
     {
-        CAKEZ_ASSERT(0, "Still some parents open without closing Identifiers");
+        assert(0, "Still some parents open without closing Identifiers");
         return true;
     }
     return true;
